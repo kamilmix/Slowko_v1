@@ -46,14 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlZarzadzaj.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlZarzadzaj.Designer.cs">
+      <DependentUpon>ControlZarzadzaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nauka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nauka.Designer.cs">
+      <DependentUpon>Nauka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pomoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pomoc.Designer.cs">
+      <DependentUpon>pomoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlZarzadzaj.resx">
+      <DependentUpon>ControlZarzadzaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nauka.resx">
+      <DependentUpon>Nauka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pomoc.resx">
+      <DependentUpon>pomoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
