@@ -41,7 +41,6 @@ namespace Slowko_v1
         int mouseX = 0, mouseY=0;
         int mouseinX = 0, mouseinY = 0;
         bool mouseDown;
-        int zmienna = 0;
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
