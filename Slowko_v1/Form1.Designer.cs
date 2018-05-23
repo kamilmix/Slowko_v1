@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonZamknijProgram = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonNauka = new System.Windows.Forms.Button();
-            this.buttonDodaj = new System.Windows.Forms.Button();
-            this.buttonPomoc = new System.Windows.Forms.Button();
-            this.panelWskazujacy = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelWskazujacy = new System.Windows.Forms.Panel();
+            this.buttonPomoc = new System.Windows.Forms.Button();
+            this.buttonDodaj = new System.Windows.Forms.Button();
+            this.buttonNauka = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonZamknijProgram = new System.Windows.Forms.Button();
             this.controlZarzadzaj1 = new Slowko_v1.ControlZarzadzaj();
             this.oknoNauki = new Slowko_v1.Nauka();
             this.oknoPomocy = new Slowko_v1.pomoc();
@@ -58,6 +58,65 @@
             this.panel1.Size = new System.Drawing.Size(153, 494);
             this.panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(21, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 33);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Słówko";
+            // 
+            // panelWskazujacy
+            // 
+            this.panelWskazujacy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.panelWskazujacy.Location = new System.Drawing.Point(0, 126);
+            this.panelWskazujacy.Name = "panelWskazujacy";
+            this.panelWskazujacy.Size = new System.Drawing.Size(8, 43);
+            this.panelWskazujacy.TabIndex = 2;
+            // 
+            // buttonPomoc
+            // 
+            this.buttonPomoc.FlatAppearance.BorderSize = 0;
+            this.buttonPomoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPomoc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPomoc.Location = new System.Drawing.Point(0, 224);
+            this.buttonPomoc.Name = "buttonPomoc";
+            this.buttonPomoc.Size = new System.Drawing.Size(154, 43);
+            this.buttonPomoc.TabIndex = 4;
+            this.buttonPomoc.Text = "Pomoc";
+            this.buttonPomoc.UseVisualStyleBackColor = true;
+            this.buttonPomoc.Click += new System.EventHandler(this.buttonPomoc_Click);
+            // 
+            // buttonDodaj
+            // 
+            this.buttonDodaj.FlatAppearance.BorderSize = 0;
+            this.buttonDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDodaj.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodaj.Location = new System.Drawing.Point(0, 175);
+            this.buttonDodaj.Name = "buttonDodaj";
+            this.buttonDodaj.Size = new System.Drawing.Size(154, 43);
+            this.buttonDodaj.TabIndex = 3;
+            this.buttonDodaj.Text = "Zarządzaj";
+            this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
+            // 
+            // buttonNauka
+            // 
+            this.buttonNauka.FlatAppearance.BorderSize = 0;
+            this.buttonNauka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNauka.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonNauka.Location = new System.Drawing.Point(0, 126);
+            this.buttonNauka.Name = "buttonNauka";
+            this.buttonNauka.Size = new System.Drawing.Size(154, 43);
+            this.buttonNauka.TabIndex = 2;
+            this.buttonNauka.Text = "Nauka";
+            this.buttonNauka.UseVisualStyleBackColor = true;
+            this.buttonNauka.Click += new System.EventHandler(this.button2_Click);
+            this.buttonNauka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonNauka_KeyDown);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
@@ -71,21 +130,6 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
-            // 
-            // buttonZamknijProgram
-            // 
-            this.buttonZamknijProgram.FlatAppearance.BorderSize = 0;
-            this.buttonZamknijProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonZamknijProgram.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonZamknijProgram.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonZamknijProgram.Location = new System.Drawing.Point(655, -3);
-            this.buttonZamknijProgram.Name = "buttonZamknijProgram";
-            this.buttonZamknijProgram.Size = new System.Drawing.Size(20, 27);
-            this.buttonZamknijProgram.TabIndex = 2;
-            this.buttonZamknijProgram.Text = "X";
-            this.buttonZamknijProgram.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonZamknijProgram.UseVisualStyleBackColor = true;
-            this.buttonZamknijProgram.Click += new System.EventHandler(this.buttonZamknijProgram_Click);
             // 
             // button1
             // 
@@ -102,72 +146,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonNauka
+            // buttonZamknijProgram
             // 
-            this.buttonNauka.FlatAppearance.BorderSize = 0;
-            this.buttonNauka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNauka.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonNauka.Location = new System.Drawing.Point(0, 126);
-            this.buttonNauka.Name = "buttonNauka";
-            this.buttonNauka.Size = new System.Drawing.Size(154, 43);
-            this.buttonNauka.TabIndex = 2;
-            this.buttonNauka.Text = "Nauka";
-            this.buttonNauka.UseVisualStyleBackColor = true;
-            this.buttonNauka.Click += new System.EventHandler(this.button2_Click);
-            this.buttonNauka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonNauka_KeyDown);
-            // 
-            // buttonDodaj
-            // 
-            this.buttonDodaj.FlatAppearance.BorderSize = 0;
-            this.buttonDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDodaj.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodaj.Location = new System.Drawing.Point(0, 175);
-            this.buttonDodaj.Name = "buttonDodaj";
-            this.buttonDodaj.Size = new System.Drawing.Size(154, 43);
-            this.buttonDodaj.TabIndex = 3;
-            this.buttonDodaj.Text = "Zarządzaj";
-            this.buttonDodaj.UseVisualStyleBackColor = true;
-            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
-            // 
-            // buttonPomoc
-            // 
-            this.buttonPomoc.FlatAppearance.BorderSize = 0;
-            this.buttonPomoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPomoc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPomoc.Location = new System.Drawing.Point(0, 224);
-            this.buttonPomoc.Name = "buttonPomoc";
-            this.buttonPomoc.Size = new System.Drawing.Size(154, 43);
-            this.buttonPomoc.TabIndex = 4;
-            this.buttonPomoc.Text = "Pomoc";
-            this.buttonPomoc.UseVisualStyleBackColor = true;
-            this.buttonPomoc.Click += new System.EventHandler(this.buttonPomoc_Click);
-            // 
-            // panelWskazujacy
-            // 
-            this.panelWskazujacy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.panelWskazujacy.Location = new System.Drawing.Point(0, 126);
-            this.panelWskazujacy.Name = "panelWskazujacy";
-            this.panelWskazujacy.Size = new System.Drawing.Size(8, 43);
-            this.panelWskazujacy.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(21, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 33);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Słówko";
+            this.buttonZamknijProgram.FlatAppearance.BorderSize = 0;
+            this.buttonZamknijProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZamknijProgram.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonZamknijProgram.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonZamknijProgram.Location = new System.Drawing.Point(655, -3);
+            this.buttonZamknijProgram.Name = "buttonZamknijProgram";
+            this.buttonZamknijProgram.Size = new System.Drawing.Size(20, 27);
+            this.buttonZamknijProgram.TabIndex = 2;
+            this.buttonZamknijProgram.Text = "X";
+            this.buttonZamknijProgram.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonZamknijProgram.UseVisualStyleBackColor = true;
+            this.buttonZamknijProgram.Click += new System.EventHandler(this.buttonZamknijProgram_Click);
             // 
             // controlZarzadzaj1
             // 
+            this.controlZarzadzaj1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.controlZarzadzaj1.ForeColor = System.Drawing.Color.Black;
             this.controlZarzadzaj1.Location = new System.Drawing.Point(153, 24);
             this.controlZarzadzaj1.Name = "controlZarzadzaj1";
             this.controlZarzadzaj1.Size = new System.Drawing.Size(675, 469);
             this.controlZarzadzaj1.TabIndex = 4;
+            this.controlZarzadzaj1.Load += new System.EventHandler(this.controlZarzadzaj1_Load);
             // 
             // oknoNauki
             // 
