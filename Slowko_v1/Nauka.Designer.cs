@@ -96,7 +96,9 @@
             this.listBox1.Items.AddRange(new object[] {
             "kolory",
             "dom",
-            "napoje"});
+            "napoje",
+            "zestaw1",
+            "zestaw2"});
             this.listBox1.Location = new System.Drawing.Point(3, 31);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(139, 105);
