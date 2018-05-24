@@ -34,12 +34,12 @@ namespace Slowko_v1
                 connection.Open();
                 OleDbCommand komenda = new OleDbCommand();
                 komenda.Connection = connection;
-                komenda.CommandText = "select slowko, tlumaczenie, czy_umie from " + listBox1.SelectedItem.ToString();
+                komenda.CommandText = "select id, slowko, tlumaczenie, czy_umie from " + listBox1.SelectedItem.ToString();
                 OleDbDataAdapter da = new OleDbDataAdapter(komenda);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
-
+                
                 connection.Close();
 
             }
@@ -48,6 +48,8 @@ namespace Slowko_v1
                 MessageBox.Show("Error " + ex);
             }
 
+            dataGridView1.CurrentCell = null;
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,6 +99,7 @@ namespace Slowko_v1
                 command.ExecuteNonQuery();
             }
                 connection.Close();
+            pokazDane();
             
 
         }
@@ -104,6 +107,45 @@ namespace Slowko_v1
         private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
             if(1==0) { }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           
+        }
+
+        private void buttonUsun_Click(object sender, EventArgs e)
+        {
+          
+
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    DataGridViewRow delrow = dataGridView1.Rows[i];
+                    if (delrow.Selected == true)
+                    {
+                    string id = delrow.Cells[0].Value.ToString();
+                   
+                        dataGridView1.Rows.RemoveAt(i);
+                        try
+                        {
+                            command.CommandText = "delete * from " + listBox1.SelectedItem.ToString() + " where id=" + id;
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+
+        }
+            connection.Close();
+            pokazDane();
+
         }
     }
 }
