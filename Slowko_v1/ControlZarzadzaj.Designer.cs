@@ -37,6 +37,9 @@
             this.buttonResetuj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonUsun = new System.Windows.Forms.Button();
+            this.buttonUsunWszystkie = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,16 +60,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(310, 71);
-            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Location = new System.Drawing.Point(284, 51);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(360, 393);
+            this.dataGridView1.Size = new System.Drawing.Size(360, 365);
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            this.dataGridView1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserAddedRow);
             // 
             // groupBox1
             // 
@@ -100,9 +102,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 211);
+            this.button1.Location = new System.Drawing.Point(30, 427);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.Size = new System.Drawing.Size(162, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
@@ -110,15 +112,15 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(33, 281);
+            this.richTextBox1.Location = new System.Drawing.Point(30, 240);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(139, 89);
+            this.richTextBox1.Size = new System.Drawing.Size(162, 181);
             this.richTextBox1.TabIndex = 15;
             this.richTextBox1.Text = "";
             // 
             // buttonResetuj
             // 
-            this.buttonResetuj.Location = new System.Drawing.Point(33, 182);
+            this.buttonResetuj.Location = new System.Drawing.Point(505, 422);
             this.buttonResetuj.Name = "buttonResetuj";
             this.buttonResetuj.Size = new System.Drawing.Size(139, 23);
             this.buttonResetuj.TabIndex = 16;
@@ -129,27 +131,61 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 71);
+            this.label1.Location = new System.Drawing.Point(30, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "label1";
+            this.label1.Text = "Podaj słówka do dodania:";
             // 
             // buttonUsun
             // 
-            this.buttonUsun.Location = new System.Drawing.Point(33, 240);
+            this.buttonUsun.Location = new System.Drawing.Point(284, 422);
             this.buttonUsun.Name = "buttonUsun";
-            this.buttonUsun.Size = new System.Drawing.Size(139, 23);
+            this.buttonUsun.Size = new System.Drawing.Size(62, 23);
             this.buttonUsun.TabIndex = 18;
             this.buttonUsun.Text = "Usuń";
             this.buttonUsun.UseVisualStyleBackColor = true;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
+            // 
+            // buttonUsunWszystkie
+            // 
+            this.buttonUsunWszystkie.Location = new System.Drawing.Point(352, 422);
+            this.buttonUsunWszystkie.Name = "buttonUsunWszystkie";
+            this.buttonUsunWszystkie.Size = new System.Drawing.Size(94, 23);
+            this.buttonUsunWszystkie.TabIndex = 19;
+            this.buttonUsunWszystkie.Text = "Usuń wszystkie";
+            this.buttonUsunWszystkie.UseVisualStyleBackColor = true;
+            this.buttonUsunWszystkie.Click += new System.EventHandler(this.buttonUsunWszystkie_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(160, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "INFO";
+            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+            this.label3.MouseHover += new System.EventHandler(this.label3_MouseHover);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Location = new System.Drawing.Point(33, 243);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(142, 72);
+            this.richTextBox2.TabIndex = 21;
+            this.richTextBox2.Text = "słówko:tłumaczenie\nsłówko2:tłumaczenie2";
+            this.richTextBox2.Visible = false;
             // 
             // ControlZarzadzaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.buttonUsunWszystkie);
             this.Controls.Add(this.buttonUsun);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonResetuj);
@@ -178,5 +214,8 @@
         private System.Windows.Forms.Button buttonResetuj;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonUsun;
+        private System.Windows.Forms.Button buttonUsunWszystkie;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }

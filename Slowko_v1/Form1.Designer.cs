@@ -165,9 +165,9 @@
             // 
             this.controlZarzadzaj1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.controlZarzadzaj1.ForeColor = System.Drawing.Color.Black;
-            this.controlZarzadzaj1.Location = new System.Drawing.Point(153, 24);
+            this.controlZarzadzaj1.Location = new System.Drawing.Point(153, 19);
             this.controlZarzadzaj1.Name = "controlZarzadzaj1";
-            this.controlZarzadzaj1.Size = new System.Drawing.Size(675, 469);
+            this.controlZarzadzaj1.Size = new System.Drawing.Size(676, 475);
             this.controlZarzadzaj1.TabIndex = 4;
             this.controlZarzadzaj1.Load += new System.EventHandler(this.controlZarzadzaj1_Load);
             // 

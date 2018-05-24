@@ -50,6 +50,7 @@ namespace Slowko_v1
 
             dataGridView1.CurrentCell = null;
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[3].FillWeight = 50;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,10 +71,7 @@ namespace Slowko_v1
             pokazDane();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            label1.Text = dataGridView1.SelectedRows.ToString();
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -88,15 +86,19 @@ namespace Slowko_v1
                 string wiersz = richTextBox1.Lines[i];
                 string[] tab = wiersz.Split(':');
 
-             //   label1.Text = tab[0];
+                //   label1.Text = tab[0];
 
-                string slowko1 = tab[0];
-                string slowko2 = tab[1];
+                if (tab.Count() > 1)
+                {
+                    string slowko1 = tab[0];
+                    string slowko2 = tab[1];
 
-                  command.CommandText = "insert into " 
-                      + listBox1.SelectedItem.ToString() + " (slowko, tlumaczenie) values ('" + slowko1+"', '"+slowko2+"') ";
 
-                command.ExecuteNonQuery();
+                    command.CommandText = "insert into "
+                        + listBox1.SelectedItem.ToString() + " (slowko, tlumaczenie) values ('" + slowko1 + "', '" + slowko2 + "') ";
+
+                    command.ExecuteNonQuery();
+                }
             }
                 connection.Close();
             pokazDane();
@@ -104,15 +106,6 @@ namespace Slowko_v1
 
         }
 
-        private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            if(1==0) { }
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-           
-        }
 
         private void buttonUsun_Click(object sender, EventArgs e)
         {
@@ -146,6 +139,46 @@ namespace Slowko_v1
             connection.Close();
             pokazDane();
 
+        }
+
+        private void buttonUsunWszystkie_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Jesteś pewny czy usunąć wszystkie słówka?", "Potwierdź", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                }
+
+                try
+                {
+                    command.CommandText = "delete * from " + listBox1.SelectedItem.ToString();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+
+                connection.Close();
+                pokazDane();
+            }       
+        }
+
+        private void label3_MouseHover(object sender, EventArgs e)
+        {
+            richTextBox2.Visible = true;
+        }
+
+        private void label3_MouseLeave(object sender, EventArgs e)
+        {
+            richTextBox2.Visible = false;
         }
     }
 }
