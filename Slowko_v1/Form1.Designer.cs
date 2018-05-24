@@ -169,7 +169,7 @@
             this.controlZarzadzaj1.Name = "controlZarzadzaj1";
             this.controlZarzadzaj1.Size = new System.Drawing.Size(676, 475);
             this.controlZarzadzaj1.TabIndex = 4;
-            this.controlZarzadzaj1.Load += new System.EventHandler(this.controlZarzadzaj1_Load);
+           // this.controlZarzadzaj1.Load += new System.EventHandler(this.controlZarzadzaj1_Load);
             // 
             // oknoNauki
             // 

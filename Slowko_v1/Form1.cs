@@ -99,11 +99,6 @@ namespace Slowko_v1
             panelWskazujacy.Height = buttonDodaj.Height;
         }
 
-        private void controlZarzadzaj1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel2_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
